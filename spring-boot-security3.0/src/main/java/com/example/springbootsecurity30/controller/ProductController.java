@@ -27,11 +27,11 @@ public class ProductController {
     private String getProduct(int id) {
         switch (id) {
             case 1:
-                return "Pen";
+                return "Pen. Id: " + id ;
             case 2:
-                return "Table";
+                return "Table. Id: " + id;
             default:
-                return "Products";
+                return "Products. Id: " + id;
         }
     }
 }
