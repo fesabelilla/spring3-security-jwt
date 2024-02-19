@@ -1,5 +1,6 @@
 package com.example.springbootsecurity30.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +16,13 @@ public class ProductController {
     }
 
     @GetMapping("/all")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String getAllProducts() {
         return "All Products Are Books, Pen, and Tables";
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public String getProductById(@PathVariable int id) {
         return getProduct(id);
     }
