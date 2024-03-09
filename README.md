@@ -5,8 +5,8 @@
 public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     return http.csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth ->
-                    auth.requestMatchers("/product-service/welcome", "/product-service/addNewUser").permitAll()
-                            .requestMatchers("/product-service/**")
+                    auth.requestMatchers("/product/welcome", "/user/add").permitAll()
+                            .requestMatchers("/product/**")
                             .authenticated()
             )
             .httpBasic(Customizer.withDefaults()).build();
