@@ -1,5 +1,6 @@
 # spring3-security-jwt
 ## For spring Boot 3.1.x
+```
 @Bean
 public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     return http.csrf(AbstractHttpConfigurer::disable)
@@ -10,3 +11,4 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
             )
             .httpBasic(Customizer.withDefaults()).build();
 }
+```
